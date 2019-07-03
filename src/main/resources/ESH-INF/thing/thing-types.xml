@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="diyled"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+	xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0 https://openhab.org/schemas/thing-description-1.0.0.xsd">
+
+	<thing-type id="diyledlamp">
+		<label>DiyLed Lamp Thing</label>
+		<description></description>
+
+		<channels>
+			<channel id="power" typeId="system.power" />
+            <channel id="brightness" typeId="system.brightness" />
+		</channels>
+
+		<config-description>
+			<parameter name="IP" type="text" required="true">
+				<label>DiyLed Server IP</label>
+				<description></description>
+			</parameter>
+			<parameter name="Name" type="text" required="true">
+                <label>Lamp Name</label>
+                <description>DiyLed Lamp Name (case sensitive)</description>
+            </parameter>
+            
+		</config-description>
+
+	</thing-type>
+
+	<channel-type id="power" system="true">
+		<item-type>Switch</item-type>
+		<label>System Power Channel</label>
+		<description>Current power state</description>
+	</channel-type>
+	<channel-type id="brightness" system="true">
+        <item-type>Dimmer</item-type>
+        <label>System Brightness Channel</label>
+        <description>Current brightness</description>
+    </channel-type>
+
+</thing:thing-descriptions>
